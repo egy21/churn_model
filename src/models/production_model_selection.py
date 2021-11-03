@@ -21,7 +21,6 @@ def log_production_model(config_path):
     #max_accuracy_run_id = 'df3887a6666a4c40a07cafcb872e216f'
     
     client = MlflowClient()
-
     
     for mv in client.search_model_versions(f"name='{model_name}'"):
         mv = dict(mv)
@@ -37,7 +36,6 @@ def log_production_model(config_path):
                 stage="Production"
             )
         else:
-            current_version = mv["version"]
             client.transition_model_version_stage(
                 name=model_name,
                 version=current_version,
