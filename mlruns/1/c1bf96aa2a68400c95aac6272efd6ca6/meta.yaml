@@ -1,0 +1,15 @@
+artifact_uri: file:///home/lacra/Courses/ML%20pipeline/churn_model/mlruns/1/c1bf96aa2a68400c95aac6272efd6ca6/artifacts
+end_time: 1635800070086
+entry_point_name: ''
+experiment_id: '1'
+lifecycle_stage: active
+name: ''
+run_id: c1bf96aa2a68400c95aac6272efd6ca6
+run_uuid: c1bf96aa2a68400c95aac6272efd6ca6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1635800069936
+status: 4
+tags: []
+user_id: lacra
