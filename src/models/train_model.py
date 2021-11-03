@@ -78,13 +78,13 @@ def train_and_evaluate(config_path):
     experiment_name: model_iteration1
     run_name: random_forest
     registered_model_name: random_forest_model
-    remote_server_url: http://localhost:5000
+    remote_server_url: http://localhost:1234
     """
 
     mlflow_config = config["mlflow_config"]
     remote_server_uri = mlflow_config["remote_server_uri"] 
     #connects to a tracking URI
-    mlflow.set_tracking_url = mlflow_config["remote_server_uri"] 
+    mlflow.set_tracking_uri(remote_server_uri)
     #creates a new experiment and returns its ID
     mlflow.set_experiment(mlflow_config["experiment_name"])
     #Runs can be launched under the experiment by passing the experiment ID to mlflow.start_run
@@ -107,10 +107,9 @@ def train_and_evaluate(config_path):
 
         tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
 
-        tracking_url_type_store = urlparse(mlflow.get_artifact_uri()).scheme
-
         
         if tracking_url_type_store != "file":
+
             mlflow.sklearn.log_model(
                 model, 
                 "model", 
