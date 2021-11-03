@@ -16,7 +16,6 @@ def log_production_model(config_path):
     runs = mlflow.search_runs(experiment_ids=1)
    
     max_accuracy = max(runs["metrics.accuracy"])
-    
     max_accuracy_run_id = list(runs[runs["metrics.accuracy"] == max_accuracy]["run_id"])[0]
     #max_accuracy_run_id = 'df3887a6666a4c40a07cafcb872e216f'
     
